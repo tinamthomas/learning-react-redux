@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
 import { useDispatch,useSelector } from "react-redux";
+import { increment } from './counterslice';
 
 function Count() {
-  const count = useSelector((state) => state.counter)
+  const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch();
 
   return (
@@ -13,11 +14,5 @@ function Count() {
     </div>
   );
 }
-
-export const increment = () => {
-  return {
-    type: "INCREMENT",
-  };
-};
 
 export default Count;
